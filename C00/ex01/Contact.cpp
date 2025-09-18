@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ex00.cpp                                           :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 10:57:05 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/16 22:59:54 by tcybak           ###   ########.fr       */
+/*   Created: 2025/09/18 14:27:13 by tcybak            #+#    #+#             */
+/*   Updated: 2025/09/18 16:51:04 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Contact.hpp"
 
-int main()
+Contact::Contact()
 {
-  int x;
-  int i;
+    _number_book = 0;
+    _first_name = "";
+    _last_name = "";
+    _nickname = "";
+    _phone_number = "";
+    _darkest_secret = "";
+}
 
-  i = 0;
-  x = 60;
-  std::cout << "Basic Number " << x << std::endl << "Enter your number" << std::endl;
-  std::cin >> x;
-  while (i < 10)
-  {
-    std::cout << "Your number is: " << x << std::endl;
-    ++i , ++x;
-  }
-  return 0;
+Contact::~Contact()
+{
+    
+}
+
+std::string Contact::getFirstName()
+{
+    return (this->_first_name);
+}
+
+void   Contact::setFirstName(std::string value)
+{
+    this->_first_name = value;
 }
