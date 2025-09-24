@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 14:15:00 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/18 16:14:34 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/09/24 17:31:20 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,15 @@ class   Contact
         ~Contact();
         std::string getFirstName();
         void        setFirstName(std::string value);
+        std::string getlastName();
+        void        setlastName(std::string value);
+        std::string getnickname();
+        void        setnickname(std::string value);
+        std::string getnumber();
+        void        setnumber(std::string value);
+        std::string getsecret();
+        void        setsecret(std::string value);
     private:
-        int         _number_book;
         std::string _first_name;
         std::string _last_name;
         std::string _nickname;
