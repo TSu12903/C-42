@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 10:29:04 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/25 14:57:34 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/09/25 15:27:10 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,9 @@ void    PhoneBook::search()
     input = entry("Select Index you want");
     if (isdigit(input[0]) && input.length() == 1)
     {
-        index = input[0] - '0';
+        index = atoi((input).c_str());
         if (!(index < 8 && index >= 0))
-            {
+        {
             std::cout << "Invalid input \nPlease enter a valide number" << std::endl;
             return ;
         }
