@@ -1,35 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Account.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 14:06:19 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/25 10:21:10 by tcybak           ###   ########.fr       */
+/*   Created: 2025/09/25 10:25:49 by tcybak            #+#    #+#             */
+/*   Updated: 2025/09/25 10:25:50 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-
-#include <iostream>
-#include <iomanip>
-#include "Contact.hpp"
-
-class   PhoneBook
-{
-    public:
-        PhoneBook();
-        ~PhoneBook();
-        void    add();
-        void    search();
-        void    print_info(int index, int i);
-    private:
-        Contact _tab[8];
-        int     _num;
-};
-
-void    print_header_tab();
-
-#endif

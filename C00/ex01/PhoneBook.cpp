@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 10:29:04 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/24 17:31:48 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/09/25 10:20:40 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,30 +53,34 @@ void    PhoneBook::add()
     
 }
 
-void    PhoneBook::search()
+void    PhoneBook::print_info(int index, int i)
 {
-    int index;
     std::string first_name;
     std::string last_name;
     std::string nickname;
+    index = i;
+    first_name = this->_tab[i].getFirstName();
+    if (first_name.length() > 10)
+        first_name = first_name.substr(0, 9) + ".";
+    last_name = PhoneBook::_tab[i].getlastName();
+    if (last_name.length() > 10)
+        last_name = last_name.substr(0, 9) + ".";
+    nickname = this->_tab[i].getnickname();
+    if (nickname.length() > 10)
+        nickname = nickname.substr(0, 9) + ".";
+    std::cout << "|" << std::setw(10) << i << "|"
+                << std::setw(10) << first_name << "|"
+                << std::setw(10) << last_name << "|"
+                << std::setw(10) << nickname << "|" << std::endl;
+}
+
+void    PhoneBook::search()
+{
+    int index = 0;
+
     print_header_tab();
     for (int i = 0; i < 8; i++)
-    {
-        index = i;
-        first_name = this->_tab[i].getFirstName();
-        if (first_name.length() > 10)
-            first_name = first_name.substr(0, 9) + ".";
-        last_name = PhoneBook::_tab[i].getlastName();
-        if (last_name.length() > 10)
-            last_name = last_name.substr(0, 9) + ".";
-        nickname = this->_tab[i].getnickname();
-        if (nickname.length() > 10)
-            nickname = nickname.substr(0, 9) + ".";
-        std::cout << "|" << std::setw(10) << i << "|"
-                  << std::setw(10) << first_name << "|"
-                  << std::setw(10) << last_name << "|"
-                  << std::setw(10) << nickname << "|" << std::endl;
-    }
+        this->print_info(index, i);
     std::cout << "Select Index you want" << std::endl;
     std::cin >> index;
     if (std::cin.fail() || !(index < 8 && index >= 0))
@@ -104,7 +108,8 @@ PhoneBook::PhoneBook()
     while (1)
     {
         std::cout << "Enter a command ADD / SEARCH or EXIT" << std::endl;
-        std::cin >> param;
+        if (!(std::cin >> param))
+            break;
         if (param == "ADD")
             add();
         else if (param == "EXIT")
@@ -116,7 +121,4 @@ PhoneBook::PhoneBook()
     }
 }
 
-PhoneBook::~PhoneBook()
-{
-    
-}
+PhoneBook::~PhoneBook(){   }
