@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 10:24:50 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/25 22:05:04 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/09/25 23:03:16 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,11 @@ void	Account::_displayTimestamp(void)
         << "] ";
 }
 
-int	Account::getNbAccounts( void )
-{
-    for (this->_accountIndex)
-}
+int Account::getNbAccounts(void){   return _nbAccounts; }
 
 Account::Account(int initial_deposit)
 {
     _displayTimestamp();
-    getNbAccounts();
 }
 
 Account::~Account(){    }
