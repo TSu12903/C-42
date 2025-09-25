@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 10:29:04 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/25 15:27:10 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/09/25 16:02:08 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ std::string    PhoneBook::entry(std::string message)
         std::cout << message << std::endl;
         std::getline(std::cin, value);
         if (value.size() != 0) return (value); 
-        if (!std::cin) exit (1);
+        if (!std::cin)
+            return ("");
     }
 }
 
@@ -109,6 +110,8 @@ PhoneBook::PhoneBook()
     while (1)
     {
         param = entry("Enter a command ADD / SEARCH or EXIT");
+        if (param == "")
+            break ;
         if (param == "ADD")
             add();
         else if (param == "EXIT")
