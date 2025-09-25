@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 10:29:04 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/25 16:02:08 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/09/25 22:06:59 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,16 @@ void    PhoneBook::search()
     for (int i = 0; i < 8; i++)
         this->print_info(index, i);
     input = entry("Select Index you want");
-    if (isdigit(input[0]) && input.length() == 1)
+    for (int i = 0; input[i]; i++)
     {
+        if (isdigit(input[i]))
+            continue ;
+        else
+        {
+            std::cout << "Invalid input \nPlease enter a valide number" << std::endl;
+            return ;
+        }
+    }
         index = atoi((input).c_str());
         if (!(index < 8 && index >= 0))
         {
@@ -97,9 +105,6 @@ void    PhoneBook::search()
             std::cout << "Phone Number : " << this->_tab[index].getnumber() << std::endl;
             std::cout << "Darkest Secret : " << this->_tab[index].getsecret() << std::endl;
         }
-    }
-    else
-        std::cout << "Invalid input \nPlease enter a valide number" << std::endl;
     return ;
 }
 
