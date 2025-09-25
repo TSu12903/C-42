@@ -6,19 +6,11 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 10:29:04 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/25 10:20:40 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/09/25 14:57:34 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
-std::string message(std::string str)
-{
-    std::string name;
-    std::cout << str << std::endl;
-    std::cin >> name;
-    return (name);
-}
 
 void    print_header_tab()
 { 
@@ -30,6 +22,18 @@ void    print_header_tab()
     std::cout << "|----------|----------|----------|----------|" << std::endl;
 }
 
+std::string    PhoneBook::entry(std::string message) 
+{
+    std::string value;
+    while (1) 
+    {
+        std::cout << message << std::endl;
+        std::getline(std::cin, value);
+        if (value.size() != 0) return (value); 
+        if (!std::cin) exit (1);
+    }
+}
+
 void    PhoneBook::add()
 {
     int i;
@@ -39,18 +43,11 @@ void    PhoneBook::add()
 
     i = (PhoneBook::_num % 8);
     PhoneBook::_num++;
-    name = message("Enter the First Name");
-    this->_tab[i].setFirstName(name);
-    name = message("Enter the Last Name");
-    PhoneBook::_tab[i].setlastName(name);
-    name = message("Enter the Nickname");
-    this->_tab[i].setnickname(name);
-    number = message("Enter the Phone Number");
-    PhoneBook::_tab[i].setnumber(number);
-    secret = message("Enter the Darkest Secret");
-    this->_tab[i].setsecret(secret);
-    
-    
+    this->_tab[i].setFirstName(entry("Enter the First Name"));
+    PhoneBook::_tab[i].setlastName(entry("Enter the Last Name"));
+    this->_tab[i].setnickname(entry("Enter the Nickname"));
+    PhoneBook::_tab[i].setnumber(entry("Enter the Phone Number"));
+    this->_tab[i].setsecret(entry("Enter the Darkest Secret"));
 }
 
 void    PhoneBook::print_info(int index, int i)
@@ -77,27 +74,31 @@ void    PhoneBook::print_info(int index, int i)
 void    PhoneBook::search()
 {
     int index = 0;
+    std::string input;
 
     print_header_tab();
     for (int i = 0; i < 8; i++)
         this->print_info(index, i);
-    std::cout << "Select Index you want" << std::endl;
-    std::cin >> index;
-    if (std::cin.fail() || !(index < 8 && index >= 0))
+    input = entry("Select Index you want");
+    if (isdigit(input[0]) && input.length() == 1)
     {
-        std::cout << "Invalid input \nPlease enter a valide number" << std::endl;
-        std::cin.clear();
-        std::cin.ignore(10000, '\n');
-        return;
+        index = input[0] - '0';
+        if (!(index < 8 && index >= 0))
+            {
+            std::cout << "Invalid input \nPlease enter a valide number" << std::endl;
+            return ;
+        }
+        else
+        {
+            std::cout << "First Name : " << this->_tab[index].getFirstName() << std::endl;
+            std::cout << "Last Name : " << this->_tab[index].getlastName() << std::endl;
+            std::cout << "Nickname : " << this->_tab[index].getnickname() << std::endl;
+            std::cout << "Phone Number : " << this->_tab[index].getnumber() << std::endl;
+            std::cout << "Darkest Secret : " << this->_tab[index].getsecret() << std::endl;
+        }
     }
     else
-    {
-        std::cout << "First Name : " << this->_tab[index].getFirstName() << std::endl;
-        std::cout << "Last Name : " << this->_tab[index].getlastName() << std::endl;
-        std::cout << "Nickname : " << this->_tab[index].getnickname() << std::endl;
-        std::cout << "Phone Number : " << this->_tab[index].getnumber() << std::endl;
-        std::cout << "Darkest Secret : " << this->_tab[index].getsecret() << std::endl;
-    }
+        std::cout << "Invalid input \nPlease enter a valide number" << std::endl;
     return ;
 }
 
@@ -107,18 +108,14 @@ PhoneBook::PhoneBook()
     PhoneBook::_num = 0;
     while (1)
     {
-        std::cout << "Enter a command ADD / SEARCH or EXIT" << std::endl;
-        if (!(std::cin >> param))
-            break;
+        param = entry("Enter a command ADD / SEARCH or EXIT");
         if (param == "ADD")
             add();
         else if (param == "EXIT")
             break;
         else if (param == "SEARCH")
             search();
-        else
-            std::cout << "Command don't exist" << std::endl;
     }
 }
 
-PhoneBook::~PhoneBook(){   }
+PhoneBook::~PhoneBook(){   }    

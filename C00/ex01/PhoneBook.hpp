@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 14:06:19 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/25 10:21:10 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/09/25 14:31:29 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 #include "Contact.hpp"
 
 class   PhoneBook
@@ -25,6 +26,7 @@ class   PhoneBook
         void    add();
         void    search();
         void    print_info(int index, int i);
+        std::string entry(std::string message);
     private:
         Contact _tab[8];
         int     _num;
