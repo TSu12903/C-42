@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 10:24:50 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/30 16:22:50 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/09/30 18:09:10 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	Account::_displayTimestamp(void)
     std::cout 
         << "["       
         << std::setw(4) << t_now->tm_year + 1900
-        << std::setw(2) << t_now->tm_mon + 1
-        << std::setw(2) << t_now->tm_mday 
+        << std::setfill('0') << std::setw(2) << t_now->tm_mon + 1
+        << std::setfill('0') << std::setw(2) << t_now->tm_mday 
         << "_"
-        << std::setw(2) << t_now->tm_hour
-        << std::setw(2) << t_now->tm_min
-        << std::setw(2) << t_now->tm_sec 
+        << std::setfill('0') << std::setw(2) << t_now->tm_hour
+        << std::setfill('0') << std::setw(2) << t_now->tm_min
+        << std::setfill('0') << std::setw(2) << t_now->tm_sec 
         << "] ";
 }
 
@@ -45,10 +45,6 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-int Account::getTotalAmount(void) { return 0; }
-int Account::getNbDeposits(void) { return 0; }
-int Account::getNbWithdrawals(void) { return 0; }
-int	Account::checkAmount( void ) const { return 0; }
 void Account::displayStatus(void) const 
 {
     _displayTimestamp();
@@ -96,6 +92,7 @@ bool Account::makeWithdrawal(int withdrawal)
 
 int Account::getNbAccounts(void){   return _nbAccounts; }
 
+
 Account::Account(int initial_deposit)
 {
     this->_accountIndex = _nbAccounts;
@@ -110,5 +107,11 @@ Account::Account(int initial_deposit)
               << ";created" << std::endl;
 }
 
-Account::~Account(){    }
+Account::~Account()
+{
+    _displayTimestamp();
+    std::cout << "index:" << this->_accountIndex
+              << ";amount:" << this->_amount
+              << ";closed" << std::endl;  
+}
 
