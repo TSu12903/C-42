@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 10:24:50 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/30 20:34:14 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/01 14:44:17 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void Account::makeDeposit(int deposit)
     _displayTimestamp();
     std::cout   << "index:" << this->_accountIndex
                 << ";p_amount:" << this->_amount
-                << ";deposits:" << deposit;
+                << ";deposit:" << deposit;
     this->_amount = this->_amount + deposit;
     _totalAmount += deposit;
     std::cout   << ";amount:" << this->_amount
@@ -83,7 +83,7 @@ bool Account::makeWithdrawal(int withdrawal)
                 << ";p_amount:" << this->_amount;
     if (withdrawal > this->_amount)
     {
-        std::cout   << "withdrawal:refused"
+        std::cout   << ";withdrawal:refused"
                     << std::endl;
         return (false);
     }

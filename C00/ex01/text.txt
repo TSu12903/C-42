@@ -1,0 +1,6 @@
+ 4294967298
+
+sstream (twitch => wankilstudio)
+
+si pas de contact dans 4 par exemple ne pas afficher les elements du 4
+

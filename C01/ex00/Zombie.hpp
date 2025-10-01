@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 21:33:27 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/01 11:44:09 by tcybak           ###   ########.fr       */
+/*   Created: 2025/10/01 11:41:22 by tcybak            #+#    #+#             */
+/*   Updated: 2025/10/01 11:44:48 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-Zombie::Zombie() {  }
+class Zombie
+{
+    public:
+        Zombie();
+        ~Zombie();
+    private:
+        
+};
 
-Zombie::~Zombie() { }
+#endif

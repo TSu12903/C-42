@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 14:06:19 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/25 14:31:29 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/01 21:18:10 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
+#include <sstream>
 #include "Contact.hpp"
 
 class   PhoneBook

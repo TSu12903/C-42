@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 10:29:04 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/25 22:06:59 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/01 21:29:19 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,14 @@ std::string    PhoneBook::entry(std::string message)
     std::string value;
     while (1) 
     {
-        std::cout << message << std::endl;
+        std::cout << message << std::endl << "$> ";
         std::getline(std::cin, value);
         if (value.size() != 0) return (value); 
         if (!std::cin)
+        {
+            std::cout << std::endl;
             return ("");
+        }
     }
 }
 
@@ -77,9 +80,18 @@ void    PhoneBook::search()
     int index = 0;
     std::string input;
 
+    if (this->_tab[0].getFirstName() == "")
+    {
+        std::cout << "No contact" << std::endl;
+        return;
+    }
     print_header_tab();
     for (int i = 0; i < 8; i++)
+    {
+        if (this->_tab[i].getFirstName() == "")
+            break;
         this->print_info(index, i);
+    }
     input = entry("Select Index you want");
     for (int i = 0; input[i]; i++)
     {
@@ -87,43 +99,35 @@ void    PhoneBook::search()
             continue ;
         else
         {
-            std::cout << "Invalid input \nPlease enter a valide number" << std::endl;
+            std::cout << "Invalid input \nPlease enter a valid number" << std::endl;
             return ;
         }
     }
-        index = atoi((input).c_str());
-        if (!(index < 8 && index >= 0))
-        {
-            std::cout << "Invalid input \nPlease enter a valide number" << std::endl;
-            return ;
-        }
-        else
-        {
-            std::cout << "First Name : " << this->_tab[index].getFirstName() << std::endl;
-            std::cout << "Last Name : " << this->_tab[index].getlastName() << std::endl;
-            std::cout << "Nickname : " << this->_tab[index].getnickname() << std::endl;
-            std::cout << "Phone Number : " << this->_tab[index].getnumber() << std::endl;
-            std::cout << "Darkest Secret : " << this->_tab[index].getsecret() << std::endl;
-        }
-    return ;
-}
-
-PhoneBook::PhoneBook()
-{
-    std::string param;
-    PhoneBook::_num = 0;
-    while (1)
+    // index = atoi((input).c_str());
+    // if (!(index < 8 && index >= 0) || (this->_tab[index].getFirstName() == ""))
+    //     std::cout << "Invalid input \nPlease enter a valid number" << std::endl;
+    std::stringstream convert(input);
+    if (!(convert >> index) || !convert.eof() || !(index < 8 && index >= 0)) 
     {
-        param = entry("Enter a command ADD / SEARCH or EXIT");
-        if (param == "")
-            break ;
-        if (param == "ADD")
-            add();
-        else if (param == "EXIT")
-            break;
-        else if (param == "SEARCH")
-            search();
+            std::cout << "Invalid input \nPlease enter a valid number" << std::endl;
+            return;
     }
+    else if (this->_tab[index].getFirstName() == "")
+    {
+        std::cout << "No contact at this index" << std::endl;
+        return;
+    }
+    else
+    {
+        std::cout << "First Name : " << this->_tab[index].getFirstName() << std::endl;
+        std::cout << "Last Name : " << this->_tab[index].getlastName() << std::endl;
+        std::cout << "Nickname : " << this->_tab[index].getnickname() << std::endl;
+        std::cout << "Phone Number : " << this->_tab[index].getnumber() << std::endl;
+        std::cout << "Darkest Secret : " << this->_tab[index].getsecret() << std::endl;
+    }
+    return ; 
 }
 
-PhoneBook::~PhoneBook(){   }    
+PhoneBook::PhoneBook() { PhoneBook::_num = 0; }
+
+PhoneBook::~PhoneBook() {   }    
