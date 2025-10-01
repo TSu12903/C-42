@@ -6,7 +6,14 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 21:33:17 by tcybak            #+#    #+#             */
-/*   Updated: 2025/09/30 21:33:18 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/01 22:35:14 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
+int main()
+{
+    Zombie Zom;
+    Zom.announce();
+}

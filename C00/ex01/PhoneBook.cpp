@@ -103,9 +103,6 @@ void    PhoneBook::search()
             return ;
         }
     }
-    // index = atoi((input).c_str());
-    // if (!(index < 8 && index >= 0) || (this->_tab[index].getFirstName() == ""))
-    //     std::cout << "Invalid input \nPlease enter a valid number" << std::endl;
     std::stringstream convert(input);
     if (!(convert >> index) || !convert.eof() || !(index < 8 && index >= 0)) 
     {
