@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 21:33:17 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/01 22:35:14 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/03 15:05:37 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 int main()
 {
     Zombie Zom;
+    Zom.randomChump("caca");
     Zom.announce();
 }

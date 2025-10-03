@@ -6,8 +6,13 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 11:45:20 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/01 22:34:58 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/03 15:06:14 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+// Zombie* newZombie( std::string name )
+// {
+
+// }

@@ -6,8 +6,13 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 11:45:10 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/01 22:34:57 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/03 15:05:21 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+void        Zombie::randomChump(std::string name)
+{
+    this->name = name;
+}
