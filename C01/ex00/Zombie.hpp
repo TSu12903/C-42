@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 11:41:22 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/03 15:04:38 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/06 17:20:23 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Zombie
         Zombie();
         ~Zombie();
         void        announce();
-        Zombie*     newZombie(std::string name);
-        void        randomChump(std::string name);
+        void        setName_Zombie(std::string value);
+        std::string getName_Zombie();
     private:
-        std::string  name;
+        std::string  _name;
         
 };
 
