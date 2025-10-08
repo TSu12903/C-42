@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:52:27 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/08 13:08:29 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/08 18:22:24 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,29 @@ int main(int ac, char **av)
         return (0);
     }
     std::string     fileContent;
+    std::string     file_name = av[1];
     std::string     toReplace = av[2];
     std::string     replaceWith = av[3];
-    std::ofstream   file(av[1]);   
+    std::ifstream   file(av[1]);   
+    std::string     new_name = file_name + ".replace";
     if (!file || !file.is_open()) 
     {
         std::cerr << "Error file that does not exist or permission does not exist" << std::endl;
         return (1);
     }
-    else if (toReplace == "" || replaceWith == "") 
+    else if (toReplace == "") 
     {
         std::cerr << "Error argument empty" << std::endl;
         return (1); 
     }
+    std::ofstream   new_file(new_name.c_str());
     std::getline(file, fileContent,'\0');
     std::cout << fileContent << std::endl;
     fileContent = replace(fileContent, toReplace, replaceWith);
-    file << fileContent;
+    std::cout << new_name << std::endl;
+    new_file << fileContent;
     file.close();
+    new_file.close();
 }
+
+// vide
