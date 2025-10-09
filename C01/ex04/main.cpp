@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:52:27 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/08 18:22:24 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/09 13:54:32 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,3 @@ int main(int ac, char **av)
     file.close();
     new_file.close();
 }
-
-// vide

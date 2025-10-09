@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 10:31:20 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/09 11:11:40 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/09 14:28:23 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class   Harl
     public:
         Harl();
         ~Harl();
-        void complain( std::string level );
+        void    complain( std::string level );
     private:
-        void debug(void);
-        void info(void);
-        void warning(void);
-        void error(void);
+        void    debug(void);
+        void    info(void);
+        void    warning(void);
+        void    error(void);
 };
 
 #endif
