@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 10:31:09 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/09 15:39:46 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/09 15:39:29 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,4 @@ void Harl::error(void)
     std::string str = "This is unacceptable! I want to speak to the manager now.";
     std::string *error_str =  &str;
     std::cout << "[ ERROR ] "<< *error_str << std::endl;
+};
