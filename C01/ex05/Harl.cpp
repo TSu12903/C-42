@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 10:31:09 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/09 15:39:46 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/10 10:44:32 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,21 @@ Harl::~Harl() { };
 void Harl::debug(void)
 {
     std::string str = "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!";
-    std::string *debug_str =  &str;
-    std::cout << "[ DEBUG ] "<< *debug_str << std::endl;
+    std::cout << "[ DEBUG ] "<< str << std::endl;
 }
 
 void Harl::info(void)
 {
     std::string str = "I cannot believe adding extra bacon costs more money. You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!";
-    std::string *info_str =  &str;
-    std::cout << "[ INFO ] "<< *info_str << std::endl;
+    std::cout << "[ INFO ] "<< str << std::endl;
 };
 void Harl::warning(void)
 {
     std::string str = "I think I deserve to have some extra bacon for free. I've been coming for years, whereas you started working here just last month.";
-    std::string *warning_str =  &str;
-    std::cout << "[ WARNING ] "<< *warning_str << std::endl;
+    std::cout << "[ WARNING ] "<< str<< std::endl;
 };
 void Harl::error(void)
 {
     std::string str = "This is unacceptable! I want to speak to the manager now.";
-    std::string *error_str =  &str;
-    std::cout << "[ ERROR ] "<< *error_str << std::endl;
+    std::cout << "[ ERROR ] "<< str << std::endl;
+};
