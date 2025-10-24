@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    Fixed.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
+/*   By: timothy <timothy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:12:52 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/20 15:10:53 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/24 09:40:43 by timothy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ class  Fixed
         ~ Fixed();
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
+        Fixed&  operator=(const Fixed& other);
     private:
-        static const int    fixed;
-        int                 fixed_point;
+        int                 _fixed_p;
+        static const int    _fractional = 8;
 };
 
 
