@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:13:00 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/24 14:23:06 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/24 16:06:16 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@ void    Fixed::setRawBits(int const raw) { this->_fixed_p = raw; }
 
 float   Fixed::toFloat(void) const { 
 	// std::cout << "Copy assignment operator called" << std::endl; 
-	return ((float)this->_fixed_p); 
+	return ((float)roundf(this->_fixed_p)); 
 }
 
 int Fixed::toInt(void) const {	
 	// std::cout << "Copy assignment operator called" << std::endl; 
-	return ((int)this->_fixed_p); 
+	return ((int)roundf(this->_fixed_p )); 
 }
 
 int    Fixed::getRawBits(void) const 
 {
     // std::cout << "getRawBits member function called" << std::endl;
-    return (this->_fixed_p);  
+    return (roundf(this->_fixed_p));  
 }
 
 Fixed::Fixed(): _fixed_p(0) {	std::cout << "Default constructor called" << std::endl; }
 
 Fixed::Fixed(const int raw) {	(void)raw; std::cout << "Int constructor called" << std::endl; }
 
-Fixed::Fixed(const float raw) { (void)raw; std::cout << "Float constructor called" << std::endl; }
+Fixed::Fixed(const float raw) { this->_fixed_p = (raw / (1 << this->_fractional)); std::cout << "Float constructor called" << std::endl; }
 
 Fixed& Fixed::operator=(const Fixed &other)
 {
