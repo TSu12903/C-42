@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 10:31:09 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/10 11:25:27 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/27 15:52:14 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void Harl::complain(std::string level)
 {
-    int     level_num;
+    int     level_num = -1;
     
     std::string str_tab[4] = {"DEBUG","INFO", "WARNING", "ERROR"};
     for (int i = 0; i < 4; i++)

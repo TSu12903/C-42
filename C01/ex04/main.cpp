@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:52:27 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/09 13:54:32 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/27 15:44:24 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,7 @@ int main(int ac, char **av)
     }
     std::ofstream   new_file(new_name.c_str());
     std::getline(file, fileContent,'\0');
-    std::cout << fileContent << std::endl;
     fileContent = replace(fileContent, toReplace, replaceWith);
-    std::cout << new_name << std::endl;
     new_file << fileContent;
     file.close();
     new_file.close();
