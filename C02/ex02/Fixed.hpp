@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:12:52 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/28 17:56:27 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/28 17:56:11 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ class  Fixed
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
         Fixed&  operator=(const Fixed& other);
+        Fixed   operator*(const Fixed& other) const;
+        Fixed   operator/(const Fixed& other) const;
+        Fixed   operator-(const Fixed& other) const;
+        Fixed   operator+(const Fixed& other) const;
         float   toFloat(void) const;
         int     toInt( void ) const;
     private:

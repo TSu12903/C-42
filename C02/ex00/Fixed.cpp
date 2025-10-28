@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: timothy <timothy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:13:00 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/24 10:06:54 by timothy          ###   ########.fr       */
+/*   Updated: 2025/10/28 12:41:28 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ Fixed& Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assigment operator called" << std::endl;
 	if (this != &other)
-	{
 		_fixed_p = other.getRawBits();
-	}
 	return *this;
 }
 

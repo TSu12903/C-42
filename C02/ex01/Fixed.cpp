@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: timothy <timothy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:13:00 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/27 14:12:57 by timothy          ###   ########.fr       */
+/*   Updated: 2025/10/28 15:08:33 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,14 @@
 void    Fixed::setRawBits(int const raw) { this->_fixed_p = raw; }
 
 float   Fixed::toFloat(void) const { 
-	// std::cout << "Copy assignment operator called" << std::endl; 
 	return ((float)this->_fixed_p / (float)(1 << _fractional)); 
 }
 
 int Fixed::toInt(void) const {	
-	// std::cout << "Copy assignment operator called" << std::endl; 
 	return ((int)(this->_fixed_p >> _fractional)); 
 }
 
-int    Fixed::getRawBits(void) const 
-{
-    // std::cout << "getRawBits member function called" << std::endl;
+int    Fixed::getRawBits(void) const {
     return ((this->_fixed_p));  
 }
 
@@ -40,15 +36,12 @@ Fixed& Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
-	{
 		_fixed_p = other.getRawBits();
-	}
 	return *this;
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& other)
 {
-	// std::cout << "Copy assigment operator called" << std::endl;
 	os << other.toFloat();
 	return (os);
 }
