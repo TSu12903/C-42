@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:13:00 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/28 16:57:51 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/28 18:25:15 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ Fixed  Fixed::operator*(const Fixed& other) const
 Fixed  Fixed::operator+(const Fixed& other) const
 {
 	Fixed result;
+	long  tmp;
 
-    long tmp = (long)this->_fixed_p + (long)other._fixed_p;
+    tmp = (long)this->_fixed_p + (long)other._fixed_p;
     tmp = tmp >> _fractional;
     result.setRawBits((int)tmp);
     return (result._fixed_p);
@@ -70,7 +71,7 @@ Fixed  Fixed::operator/(const Fixed& other) const
     long tmp = (long)other._fixed_p /(long)this->_fixed_p;
     tmp = tmp >> _fractional;
     result.setRawBits((int)tmp);
-    return (result);
+    return (result._fixed_p);
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& other)
