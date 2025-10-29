@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: timothy <timothy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:13:00 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/29 02:39:03 by timothy          ###   ########.fr       */
+/*   Updated: 2025/10/29 13:45:34 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ bool   Fixed::operator>=(const Fixed& other) const { return (this->_fixed_p >= o
 bool   Fixed::operator==(const Fixed& other) const { return (this->_fixed_p == other._fixed_p); }
 
 bool   Fixed::operator!=(const Fixed& other) const { return (this->_fixed_p != other._fixed_p); }
+
+
 
 std::ostream& operator<<(std::ostream& os, const Fixed& other)
 {

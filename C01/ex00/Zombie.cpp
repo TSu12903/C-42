@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 21:33:27 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/27 16:15:11 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/29 16:28:01 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,4 @@ void    Zombie::announce() {    std::cout << _name << ": BraiiiiiiinnnzzzZ..." <
 
 Zombie::Zombie() {  }
 
-Zombie::~Zombie() { }
+Zombie::~Zombie() { std::cout << _name << std::endl; }
