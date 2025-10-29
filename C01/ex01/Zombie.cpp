@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 17:53:40 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/06 18:14:09 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/29 12:41:22 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,7 @@ void        Zombie::setName_Zombie(std::string value) { this->_name = value;  }
 
 std::string Zombie::getName_Zombie(){ return(this->_name); }
 
-void    Zombie::announce()
-{
-    std::cout   << _name
-                << ": BraiiiiiiinnnzzzZ..."
-                << std::endl; 
-}
+void    Zombie::announce() {    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl; }
 
 Zombie::Zombie() {  }
 

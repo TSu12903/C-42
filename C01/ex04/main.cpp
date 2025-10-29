@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:52:27 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/27 15:44:24 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/29 13:15:02 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ int main(int ac, char **av)
 {
     if (ac != 4)
     {
-        std::cout   << "Need 1 file and 2 arguments"
-                    << std::endl;
+        std::cout << "Need 1 file and 2 arguments" << std::endl;
         return (0);
     }
     std::string     fileContent;
@@ -50,12 +49,20 @@ int main(int ac, char **av)
     else if (toReplace == "") 
     {
         std::cerr << "Error argument empty" << std::endl;
+        file.close();
         return (1); 
     }
     std::ofstream   new_file(new_name.c_str());
+    if (!new_file || !new_file.is_open())
+    {
+        std::cerr << "Error file that does not exist or permission does not exist" << std::endl;
+        file.close();
+        return (1);
+    }
     std::getline(file, fileContent,'\0');
     fileContent = replace(fileContent, toReplace, replaceWith);
     new_file << fileContent;
     file.close();
     new_file.close();
+    return (0);
 }
