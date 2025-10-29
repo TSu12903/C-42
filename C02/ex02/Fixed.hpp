@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
+/*   By: timothy <timothy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:12:52 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/28 18:30:05 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/29 02:23:56 by timothy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,12 @@ class  Fixed
         Fixed   operator/(const Fixed& other) const;
         Fixed   operator-(const Fixed& other) const;
         Fixed   operator+(const Fixed& other) const;
-        Fixed   operator<(const Fixed& other) const;
+        bool    operator<(const Fixed& other) const;
+        bool    operator>(const Fixed& other) const;
+        bool    operator>=(const Fixed& other) const;
+        bool    operator<=(const Fixed& other) const;
+        bool    operator==(const Fixed& other) const;
+        bool    operator!=(const Fixed& other) const;
         float   toFloat(void) const;
         int     toInt( void ) const;
     private:

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
+/*   By: timothy <timothy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:12:40 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/28 18:21:38 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/29 02:19:23 by timothy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@ int main( void )
     Fixed const d(2);
     Fixed const b(Fixed(5.05f) * Fixed(2));
     
+    if (c < d)
+        std::cout << "c < d" << std::endl;
+    else
+        std::cout << "c >= d" << std::endl;
+
+    if (c > d)
+        std::cout << "c > d" << std::endl;
+    else
+        std::cout << "c <= d" << std::endl;
     std::cout << c + d << "   ++ here" << std::endl;
     std::cout << c - d << "   -- here" << std::endl;
     std::cout << c / d << "   / here" << std::endl;
