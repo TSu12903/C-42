@@ -6,7 +6,7 @@
 /*   By: timothy <timothy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:12:40 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/29 02:19:23 by timothy          ###   ########.fr       */
+/*   Updated: 2025/10/29 02:35:28 by timothy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int main( void )
     std::cout << c / d << "   / here" << std::endl;
     std::cout << c * d << "   * here" << std::endl;
     std::cout << a << std::endl;
-    // std::cout << ++a << std::endl;
+    std::cout << ++a << std::endl;
     std::cout << a << std::endl;
-    // std::cout << a++ << std::endl;
+    std::cout << a++ << std::endl;
     std::cout << a << std::endl;
     std::cout << b << std::endl;
-    // std::cout << Fixed::max( a, b ) << std::endl;
+    std::cout << Fixed::max( a, b ) << std::endl;
 
 }
