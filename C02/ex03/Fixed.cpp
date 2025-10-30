@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:13:00 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/30 13:30:14 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/30 17:59:37 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,41 +36,32 @@ Fixed& Fixed::operator=(const Fixed &other)
 Fixed  Fixed::operator*(const Fixed& other) const
 {
 	Fixed result;
-    long  tmp;
 
-    tmp = (long)this->_fixed_p * (long)other._fixed_p;
-    tmp = tmp >> _fractional;
-    result.setRawBits((int)tmp);
+    result.setRawBits((this->_fixed_p * other._fixed_p) >> _fractional);
     return (result);
 }
 
 Fixed  Fixed::operator+(const Fixed& other) const
 {
 	Fixed result;
-	long  tmp;
 
-    tmp = (long)this->_fixed_p + (long)other._fixed_p;
-    result.setRawBits((int)tmp);
+    result.setRawBits(this->_fixed_p + other._fixed_p);
     return (result);
 }
 
 Fixed  Fixed::operator-(const Fixed& other) const
 {
 	Fixed result;
-    long  tmp;
 
-    tmp = (long)this->_fixed_p - (long)other._fixed_p;
-    result.setRawBits((int)tmp);
+    result.setRawBits(this->_fixed_p - other._fixed_p);   
     return (result);
 }
 
 Fixed  Fixed::operator/(const Fixed& other) const
 {
 	Fixed result;
-    long  tmp;
 
-    tmp = ((long)this->_fixed_p << _fractional) / (long)other._fixed_p;
-    result.setRawBits((int)tmp);
+    result.setRawBits((this->_fixed_p << _fractional) / other._fixed_p);
     return (result);
 }
 

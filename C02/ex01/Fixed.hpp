@@ -6,12 +6,12 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:12:52 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/28 17:56:27 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/30 13:27:56 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <math.h>

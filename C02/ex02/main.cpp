@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:12:40 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/29 16:46:43 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/30 12:55:40 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int main( void )
     std::cout << a++ << std::endl;
     std::cout << a << std::endl;
     std::cout << b << std::endl;
-    // std::cout << Fixed::max( a, b ) << std::endl;
+    std::cout << Fixed::max(a, b) << std::endl;
+    std::cout << Fixed::min(a, b) << std::endl;
 
 }

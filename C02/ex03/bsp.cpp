@@ -6,26 +6,26 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 13:22:42 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/30 16:50:49 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/30 18:04:38 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-float   Point::vect(Point const a, Point const b, Point const point)
+Fixed   Point::vect(Point const a, Point const b, Point const point)
 {
-    float result;
+    Fixed result;
 
-    result = (a._x.toFloat() - point._x.toFloat())*(b._y.toFloat() - point._y.toFloat())
-            - (a._y.toFloat() - point._y.toFloat())*(b._x.toFloat() - point._x.toFloat());
+    result = (a._x - point._x)*(b._y - point._y)
+            - (a._y - point._y)*(b._x - point._x);
     return (result);
 }
 
 bool Point::bsp(Point const a, Point const b, Point const c, Point const point)
 {
-    float   S1;
-    float   S2;
-    float   S3;
+    Fixed   S1;
+    Fixed   S2;
+    Fixed   S3;
 
     S1 = vect(a, b, point);
     S2 = vect(b, c, point);

@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:13:00 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/29 16:46:25 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/30 17:59:52 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,41 +36,32 @@ Fixed& Fixed::operator=(const Fixed &other)
 Fixed  Fixed::operator*(const Fixed& other) const
 {
 	Fixed result;
-    long  tmp;
 
-    tmp = (long)this->_fixed_p * (long)other._fixed_p;
-    tmp = tmp >> _fractional;
-    result.setRawBits((int)tmp);
+    result.setRawBits((this->_fixed_p * other._fixed_p) >> _fractional);
     return (result);
 }
 
 Fixed  Fixed::operator+(const Fixed& other) const
 {
 	Fixed result;
-	long  tmp;
 
-    tmp = (long)this->_fixed_p + (long)other._fixed_p;
-    result.setRawBits((int)tmp);
+    result.setRawBits(this->_fixed_p + other._fixed_p);
     return (result);
 }
 
 Fixed  Fixed::operator-(const Fixed& other) const
 {
 	Fixed result;
-    long  tmp;
 
-    tmp = (long)this->_fixed_p - (long)other._fixed_p;
-    result.setRawBits((int)tmp);
+    result.setRawBits(this->_fixed_p - other._fixed_p);   
     return (result);
 }
 
 Fixed  Fixed::operator/(const Fixed& other) const
 {
 	Fixed result;
-    long  tmp;
 
-    tmp = ((long)this->_fixed_p << _fractional) / (long)other._fixed_p;
-    result.setRawBits((int)tmp);
+    result.setRawBits((this->_fixed_p << _fractional) / other._fixed_p);
     return (result);
 }
 
@@ -102,6 +93,34 @@ Fixed   Fixed::operator--(int){
     Fixed tmp = *this;
     --*this;
     return (tmp);
+}
+
+Fixed&  Fixed::min(Fixed& a, Fixed& b)
+{
+    if (a > b)
+        return (b);
+    return (a);
+}
+
+Fixed&  Fixed::max(Fixed& a, Fixed& b)
+{
+    if (a < b)
+        return (b);
+    return (a);
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+    if (a > b)
+        return (b);
+    return (a);
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+    if (a < b)
+        return (b);
+    return (a);
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& other)

@@ -6,12 +6,12 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:12:52 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/29 17:33:42 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/30 13:28:01 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <math.h>
@@ -35,7 +35,10 @@ class  Fixed
         Fixed&  operator--();
         Fixed   operator++(int);
         Fixed   operator--(int);
-        Fixed   operatormax(const Fixed& other) const;
+        static Fixed& min(Fixed& a, Fixed& b);
+        static const Fixed& min(const Fixed& a, const Fixed& b);
+        static Fixed& max(Fixed& a, Fixed& b);
+        static const Fixed& max(const Fixed& a, const Fixed& b);
         bool    operator<(const Fixed& other) const;
         bool    operator>(const Fixed& other) const;
         bool    operator>=(const Fixed& other) const;
