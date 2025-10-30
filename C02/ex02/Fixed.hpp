@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:12:52 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/29 13:55:01 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/29 17:33:42 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ class  Fixed
         Fixed   operator-(const Fixed& other) const;
         Fixed   operator+(const Fixed& other) const;
         Fixed&  operator++();
+        Fixed&  operator--();
         Fixed   operator++(int);
+        Fixed   operator--(int);
+        Fixed   operatormax(const Fixed& other) const;
         bool    operator<(const Fixed& other) const;
         bool    operator>(const Fixed& other) const;
         bool    operator>=(const Fixed& other) const;

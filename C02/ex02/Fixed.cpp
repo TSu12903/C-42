@@ -6,7 +6,7 @@
 /*   By: tcybak <tcybak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:13:00 by tcybak            #+#    #+#             */
-/*   Updated: 2025/10/29 13:45:34 by tcybak           ###   ########.fr       */
+/*   Updated: 2025/10/29 16:46:25 by tcybak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,23 @@ bool   Fixed::operator==(const Fixed& other) const { return (this->_fixed_p == o
 
 bool   Fixed::operator!=(const Fixed& other) const { return (this->_fixed_p != other._fixed_p); }
 
+Fixed&  Fixed::operator++(){ _fixed_p++; return (*this);}
 
+Fixed&  Fixed::operator--(){ _fixed_p--; return (*this);}
+
+Fixed   Fixed::operator++(int){
+
+    Fixed tmp = *this;
+    ++*this;
+    return (tmp);
+}
+
+Fixed   Fixed::operator--(int){
+
+    Fixed tmp = *this;
+    --*this;
+    return (tmp);
+}
 
 std::ostream& operator<<(std::ostream& os, const Fixed& other)
 {
