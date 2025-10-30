@@ -1,4 +1,4 @@
-NAME := a.out
+NAME := operator
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 SRC :=	main.cpp \
